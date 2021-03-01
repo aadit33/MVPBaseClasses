@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="all_marginquarter">4dp</dimen>
+    <dimen name="all_marginhalf">8dp</dimen>
+    <dimen name="all_margin">16dp</dimen>
+    <dimen name="all_margindouble">24dp</dimen>
+    <dimen name="cornerradius">1dp</dimen>
+    <dimen name="all_icon_padding">2dp</dimen>
+
+    <dimen name="nav_header_height">120dp</dimen>
+    <dimen name="all_textsize_button">14sp</dimen>
+
+    <!--Sizes for text in android -->
+    <dimen name="all_textsize_edittext">14sp</dimen>
+    <dimen name="all_textsize_menu">14sp</dimen>
+    <dimen name="all_textsize_caption">13sp</dimen>
+    <dimen name="all_textsize_body1">12sp</dimen>
+    <dimen name="all_textsize_body2">12sp</dimen>
+    <dimen name="all_textsize_body3">14sp</dimen>
+    <dimen name="all_textsize_body4">10sp</dimen>
+    <dimen name="all_textsize_subhead">16sp</dimen>
+    <dimen name="all_textsize_title">18sp</dimen>
+    <dimen name="all_textsize_headline">24sp</dimen>
+    <dimen name="all_textsize_display1">34sp</dimen>
+    <dimen name="all_textsize_display2">45sp</dimen>
+    <dimen name="all_textsize_display3">56sp</dimen>
+    <dimen name="all_textsize_display4">112sp</dimen>
+    <dimen name="peek_height">500dp</dimen>
+
+    <!--Variable for style themes-->
+    <string name="height_normal_theme">match_parent</string>
+    <string name="height_one_page_theme">wrap_content</string>
+
+    <dimen name="round_button_small">32dp</dimen>
+    <dimen name="round_button_medium">64dp</dimen>
+    <dimen name="round_button_large">92dp</dimen>
+
+    <dimen name="rect_button_margin">12dp</dimen>
+    <dimen name="rect_button_width">80dp</dimen>
+    <dimen name="rect_button_height">24dp</dimen>
+    <dimen name="shutter_button_margin">80dp</dimen>
+
+    <dimen name="margin_xsmall">16dp</dimen>
+    <dimen name="margin_small">32dp</dimen>
+    <dimen name="margin_medium">48dp</dimen>
+    <dimen name="margin_large">64dp</dimen>
+    <dimen name="margin_xlarge">92dp</dimen>
+
+    <dimen name="spacing_small">4dp</dimen>
+    <dimen name="spacing_medium">8dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+</resources>

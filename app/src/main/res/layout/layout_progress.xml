@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/rl_progress_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/progress_back"
+    android:clickable="true"
+    android:visibility="gone"
+    tool:visibility="gone">
+
+    <RelativeLayout
+        android:id="@+id/rl_indeterminate_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/border_edt"
+        android:gravity="start"
+        android:orientation="horizontal"
+        android:padding="@dimen/all_margin">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/all_marginhalf"
+            android:padding="@dimen/all_marginhalf"
+            android:textColor="@color/darkGreyColor"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/pg_progress_determinate"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="300dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/txt_title"
+            android:layout_gravity="center"
+            android:indeterminate="false"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/pg_progress"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/pg_progress_determinate"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/all_marginhalf"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/txt_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pg_progress_determinate"
+            android:layout_toEndOf="@id/pg_progress"
+            android:padding="@dimen/all_marginhalf"
+            android:text="@string/loading"
+            android:visibility="visible" />
+    </RelativeLayout>
+</RelativeLayout>
