@@ -11,7 +11,7 @@ import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
 
-class MovieApi(helper: PreferencesHelper) : NetworkProvider(helper), MovieInteraction {
+class MovieApiProvider(helper: PreferencesHelper) : NetworkProvider(helper), MovieInteraction {
 
     private val movieApiService: MovieApiService
 

@@ -133,4 +133,8 @@ public class BaseAlertDialog extends DialogFragment implements BaseView {
         getBaseActivity().hideNetworkError();
     }
 
+    @Override
+    public AnalyticsHelper getAnalyticsHelper() {
+        return getBaseActivity().getAnalyticsHelper();
+    }
 }

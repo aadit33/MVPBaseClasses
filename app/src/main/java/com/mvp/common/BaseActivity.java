@@ -22,6 +22,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.LifecycleRegistry;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mvp.R;
 import com.mvp.permission.PermissionHelper;
 import com.mvp.permission.PermissionHelperImpl;
@@ -30,7 +32,7 @@ import com.mvp.utils.Utilities;
 
 import java.util.List;
 
-public class BaseActivity extends AppCompatActivity implements BaseView, NetworkHelper {
+public class BaseActivity extends AppCompatActivity implements BaseView, NetworkHelper, AnalyticsHelper {
 
     private final LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
     private PermissionHelper permissionHelper;
@@ -340,5 +342,42 @@ public class BaseActivity extends AppCompatActivity implements BaseView, Network
     public CharSequence setErrorMessage(int resId, View errorView) {
         errorView.requestFocus();
         return getString(resId);
+    }
+
+    @Override
+    public void logError(String message) {
+        logError(new Exception(message));
+
+    }
+
+    @Override
+    public void logError(Throwable throwable) {
+     //log crashlytics here
+    }
+
+    @Override
+    public void logEvent(String message) {
+        logError(new Exception(message));
+    }
+
+    @Override
+    public void setScreenName(String screenName) {
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, screenName);
+        getFirebaseAnalytics().logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+    }
+
+    @Override
+    public void setUserDetails() {
+
+    }
+
+    private FirebaseAnalytics getFirebaseAnalytics() {
+        return getBaseApp().getFirebaseAnalytics();
+    }
+
+    @Override
+    public AnalyticsHelper getAnalyticsHelper() {
+        return this;
     }
 }

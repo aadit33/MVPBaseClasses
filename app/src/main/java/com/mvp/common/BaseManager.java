@@ -8,6 +8,9 @@ public class BaseManager {
         this.networkHelper = networkHelper;
     }
 
+    public BaseManager() {
+    }
+
     public NetworkHelper getNetworkHelper() {
         return networkHelper;
     }

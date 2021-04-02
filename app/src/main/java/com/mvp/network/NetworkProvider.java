@@ -8,6 +8,7 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -32,18 +33,18 @@ public class NetworkProvider {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.readTimeout(HttpConstants.TIMEOUT, TimeUnit.MINUTES).writeTimeout(HttpConstants.TIMEOUT, TimeUnit.MINUTES).connectTimeout(HttpConstants.TIMEOUT, TimeUnit.MINUTES);
 //        if (BuildConfig.BUILD_TYPE.contentEquals("develop")) {
-//            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-//            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-//            builder.addNetworkInterceptor(new StethoInterceptor());
-//            // builder.addNetworkInterceptor(new ChuckInterceptor(AppConstants.context));
-//            builder.addInterceptor(interceptor);
+            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+          //  builder.addNetworkInterceptor(new StethoInterceptor());
+            // builder.addNetworkInterceptor(new ChuckInterceptor(AppConstants.context));
+            builder.addInterceptor(interceptor);
 //        }
         builder.addNetworkInterceptor(new AuthenticationInterceptors());
         okHttpClient = builder.build();
     }
 
     private void initRetrofit() {
-        String basePath = HttpConstants.SERVER_URL;
+        String basePath = HttpConstants.SERVER_URL_LOGIN;
         retrofit = new Retrofit.Builder()
                 .baseUrl(basePath)
                 .client(okHttpClient)

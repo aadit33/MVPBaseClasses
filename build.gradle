@@ -48,5 +48,6 @@ ext {
     userLocationVersion = "1.9.2"
     concealVersion = "2.0.1@aar"
     codecVersion = "1.10"
+    butterKnifeVersion = '10.2.0'
 
 }

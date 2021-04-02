@@ -76,6 +76,7 @@ public abstract class BasePresenter implements LifecycleObserver {
     public BasePresenter(BaseView view) {
         // Initialize this presenter as a lifecycle-aware when a view is a lifecycle owner.
         this.view = view;
+        view.getAnalyticsHelper().setScreenName(getScreenName());
         if (view instanceof LifecycleOwner) {
             ((LifecycleOwner) view).getLifecycle().addObserver(this);
         }

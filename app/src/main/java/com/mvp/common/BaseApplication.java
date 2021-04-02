@@ -5,6 +5,7 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.ProcessLifecycleOwner;
 import com.facebook.soloader.SoLoader;
 import com.facebook.stetho.Stetho;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mvp.utils.AppConstants;
 import com.mvp.utils.AppPreferencesHelper;
 import com.mvp.utils.PreferencesHelper;
@@ -18,6 +19,7 @@ public class BaseApplication extends Application implements LifecycleObserver, L
     private PreferencesHelper preferences;
     private NetworkHelper networkHelper;
     private CoordinateManager coordinateManager;
+    private FirebaseAnalytics firebaseAnalytics;
 
     @Override
     public void onCreate() {
@@ -83,6 +85,14 @@ public class BaseApplication extends Application implements LifecycleObserver, L
 
     private void initConcealHelper() {
         SoLoader.init(this, false);
+    }
+
+    public FirebaseAnalytics getFirebaseAnalytics() {
+        if (firebaseAnalytics == null)
+        {
+            firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        }
+        return firebaseAnalytics;
     }
 
 }

@@ -181,4 +181,8 @@ public class BaseFragment extends Fragment implements BaseView {
 
     }
 
+    @Override
+    public AnalyticsHelper getAnalyticsHelper() {
+        return getBaseActivity().getAnalyticsHelper();
+    }
 }

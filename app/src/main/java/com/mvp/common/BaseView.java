@@ -1,6 +1,7 @@
 package com.mvp.common;
 
 
+import com.mvp.model.User;
 import com.mvp.permission.PermissionHelper;
 import com.mvp.utils.PreferencesHelper;
 
@@ -35,5 +36,7 @@ public interface BaseView {
     void showNetworkError();
 
     void hideNetworkError();
+
+    AnalyticsHelper getAnalyticsHelper();
 
 }
